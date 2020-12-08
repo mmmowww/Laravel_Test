@@ -25,3 +25,13 @@ Route::get('/news/{id}', function ($id) { // Новость в отдельно�
 	return view('newsconcrate',["news" => $news]);
 
 });
+
+Route::get('/post','PostTestController@PostTest');
+Route::post('/post/ferst','PostTestController@FerstPost');
+Route::post('/post/two','PostTestController@TwoPost');
+Route::post('/post/tree','PostTestController@TrePost');
+
+Route::get('/post/{f1}/{f2}',function($f1,$f2){
+
+	view('post',["f1"=>$f1,"f2"=>$f2]);
+});
